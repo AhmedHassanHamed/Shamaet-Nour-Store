@@ -1,5 +1,5 @@
 /* =========================================================
-   شمعة نور | app.js
+   شمعة نوࢪ | app.js
    الراوتر + المتجر + السلة + المفضلة + الدفع + التواصل + اللغة + الثيم
    يعتمد على المتغيرات الموجودة في i18n.js:
    PRODUCTS, CATEGORIES, SIZES, COUPONS, MAX_QTY, SHIPPING_FEE,
@@ -112,8 +112,8 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
       }),
     );
     [
-      [".brand-name", "شمعة نور", "Shamaet Nour"],
-      [".features-heading", "لماذا شمعة نور", "Why Shamaet Nour"],
+      [".brand-name", "شمعة نوࢪ", "Shamaet Nour"],
+      [".features-heading", "لماذا شمعة نوࢪ", "Why Shamaet Nour"],
     ].forEach(([sel, ar, enText]) =>
       $$(sel).forEach((el) => (el.textContent = en() ? enText : ar)),
     );
@@ -133,7 +133,7 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
     const lb = $("#langToggle span");
     if (lb) lb.textContent = l === "ar" ? "EN" : "AR";
     if ($("#view")) route();
-    else setTitle("تواصل معنا | شمعة نور");
+    else setTitle("تواصل معنا | شمعة نوࢪ");
     applyLang();
   }
 
@@ -237,7 +237,7 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
   /* ===== الصفحات ===== */
   const pages = {
     home() {
-      setTitle("شمعة نور | شموع وعطور وديكور فاخر");
+      setTitle("شمعة نوࢪ | شموع وعطور وديكور فاخر");
       const g = $("#featuredGrid");
       refresh = () => {
         g.innerHTML = PRODUCTS.slice(0, 4).map(card).join("");
@@ -261,7 +261,7 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
     },
 
     shop() {
-      setTitle("المتجر | شمعة نور");
+      setTitle("المتجر | شمعة نوࢪ");
       const f = $("#filtersForm"),
         grid = $("#productGrid"),
         sort = $("#sortSelect");
@@ -313,7 +313,7 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
         new URLSearchParams(location.hash.split("?")[1] || "").get("id"),
       );
       if (!p) return (location.hash = "#/shop");
-      setTitle("", `${pname(p)} | ${t("شمعة نور")}`);
+      setTitle("", `${pname(p)} | ${t("شمعة نوࢪ")}`);
       $(".breadcrumb li:last-child").textContent = pname(p);
       const im = $("#productImage");
       im.src = img(p);
@@ -361,7 +361,7 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
     },
 
     cart() {
-      setTitle("السلة | شمعة نور");
+      setTitle("السلة | شمعة نوࢪ");
       const list = $("#cartList"),
         empty = $("#cartEmpty");
       $("#couponInput").value = coupon;
@@ -416,7 +416,7 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
     },
 
     checkout() {
-      setTitle("إتمام الطلب | شمعة نور");
+      setTitle("إتمام الطلب | شمعة نوࢪ");
       if (!cart.length) return (location.hash = "#/cart");
       $("#orderItems").innerHTML = cart
         .map(
@@ -477,7 +477,7 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
     },
 
     wishlist() {
-      setTitle("المفضلة | شمعة نور");
+      setTitle("المفضلة | شمعة نوࢪ");
       const g = $("#wishGrid");
       refresh = () => {
         const list = wish.map(byId).filter(Boolean);
@@ -525,7 +525,7 @@ a.icon-btn[href$="#/cart"]{--icon:${bag}}`;
 
   /* ===== صفحة التواصل ===== */
   function initContact() {
-    setTitle("تواصل معنا | شمعة نور");
+    setTitle("تواصل معنا | شمعة نوࢪ");
     $$(".channel").forEach((li) => {
       const ch = li.dataset.channel,
         url = LINKS[ch];

@@ -1,15 +1,15 @@
 /* قاموس الترجمة: المفتاح = النص العربي زي ما هو في الـ HTML، والقيمة = الإنجليزي */
 const I18N_EN = {
-  "شمعة نور | شموع وعطور وديكور فاخر":
+  "شمعة نوࢪ | شموع وعطور وديكور فاخر":
     "Shamaet Nour | Luxury Candles, Perfumes & Decor",
-  "المتجر | شمعة نور": "Shop | Shamaet Nour",
-  "السلة | شمعة نور": "Cart | Shamaet Nour",
-  "إتمام الطلب | شمعة نور": "Checkout | Shamaet Nour",
-  "المفضلة | شمعة نور": "Wishlist | Shamaet Nour",
-  "تواصل معنا | شمعة نور": "Contact | Shamaet Nour",
+  "المتجر | شمعة نوࢪ": "Shop | Shamaet Nour",
+  "السلة | شمعة نوࢪ": "Cart | Shamaet Nour",
+  "إتمام الطلب | شمعة نوࢪ": "Checkout | Shamaet Nour",
+  "المفضلة | شمعة نوࢪ": "Wishlist | Shamaet Nour",
+  "تواصل معنا | شمعة نوࢪ": "Contact | Shamaet Nour",
 
   "تخطي إلى المحتوى": "Skip to content",
-  "شمعة نور": "Shamaet Nour",
+  "شمعة نوࢪ": "Shamaet Nour",
   "القائمة الرئيسية": "Main navigation",
   الرئيسية: "Home",
   المتجر: "Shop",
@@ -23,7 +23,7 @@ const I18N_EN = {
   "شموع وعطور وديكور بتفاصيل هادئة تليق ببيتك.":
     "Candles, fragrances and decor in calm details that suit your home.",
   "روابط سريعة": "Quick links",
-  "شمعة نور. جميع الحقوق محفوظة.": "Shamaet Nour. All rights reserved.",
+  "شمعة نوࢪ. جميع الحقوق محفوظة.": "Shamaet Nour. All rights reserved.",
   "مسار التنقل": "Breadcrumb",
   "تواصل سريع": "Quick contact",
   "إخفاء أزرار التواصل": "Hide contact buttons",
@@ -49,7 +49,7 @@ const I18N_EN = {
   "أضف للمفضلة": "Add to wishlist",
   "إزالة من المفضلة": "Remove from wishlist",
   "ج.م": "EGP",
-  "لماذا شمعة نور": "Why Shamaet Nour",
+  "لماذا شمعة نوࢪ": "Why Shamaet Nour",
   "تغليف للهدايا": "Gift packaging",
   "تغليف أنيق جاهز للإهداء.": "Elegant packaging, ready to give.",
   "خامات مختارة": "Chosen materials",
