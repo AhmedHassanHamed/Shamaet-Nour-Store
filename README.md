@@ -6,7 +6,6 @@ A bilingual (Arabic / English) storefront for luxury candles, perfumes, home fra
 
 **Live demo:** https://ahmedhassanhamed.github.io/Shamaet-Nour-Store/
 
-Add screenshots to a /screenshots folder, then uncomment:
 ![Home](images/home.png)
 ![Shop](images/shop.png)
 ![Dark mode](images/dark.png)
