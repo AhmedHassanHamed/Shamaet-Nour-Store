@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>شمعة نوࢪ | شموع وعطور وديكور فاخر</title>
+    <meta
+      name="description"
+      content="شموع معطرة وعطور وروائح للبيت وديكور مختار بعناية، بتصميم هادئ وفاخر وتغليف مناسب للهدايا."
+    />
+    <meta name="theme-color" content="#f6efe6" />
+
+    <!-- معاينة الرابط -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="شمعة نور | شموع وعطور وديكور فاخر" />
+    <meta
+      property="og:description"
+      content="شموع وعطور وروائح للبيت بتصميم هادئ وفاخر."
+    />
+    <meta property="og:image" content="images/og-cover.jpg" />
+
+    <!-- الأيقونات -->
+    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="apple-touch-icon" href="images/icon.png" />
+
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&family=Tajawal:wght@400;500;700&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ملف CSS واحد + ملفين JS: الأول للغة، والتاني لمنطق المشروع -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/i18n.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+    <!-- ========== الهيدر ========== -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#/" class="brand">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span class="brand-name">شمعة نوࢪ</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html#/" class="nav-link" data-nav="home"
+                >الرئيسية</a
+              >
+            </li>
+            <li>
+              <a href="index.html#/shop" class="nav-link" data-nav="shop"
+                >المتجر</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="nav-link" data-nav="contact"
+                >تواصل معنا</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="icon-btn"
+            id="langToggle"
+            aria-label="تغيير اللغة"
+          >
+            <span>EN</span>
+          </button>
+          <button
+            type="button"
+            class="icon-btn"
+            id="themeToggle"
+            aria-label="تبديل الوضع الليلي"
+          >
+            <span>ثيم</span>
+          </button>
+          <a href="index.html#/wishlist" class="icon-btn" aria-label="المفضلة">
+            <span class="icon-label">المفضلة</span>
+            <span class="badge" id="wishCount">0</span>
+          </a>
+          <a href="index.html#/cart" class="icon-btn" aria-label="السلة">
+            <span class="icon-label">السلة</span>
+            <span class="badge" id="cartCount">0</span>
+          </a>
+          <button
+            type="button"
+            class="icon-btn menu-btn"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="mainNav"
+            aria-label="فتح القائمة"
+          >
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- الـ JS بيعرض هنا الصفحة المطلوبة (رئيسية، متجر، منتج، سلة، دفع، مفضلة) من القوالب اللي تحت -->
+    <main id="main" tabindex="-1">
+      <div id="view"></div>
+      <noscript
+        ><p class="noscript-msg">
+          يحتاج الموقع إلى تفعيل JavaScript ليعمل.
+        </p></noscript
+      >
+    </main>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <p class="footer-logo">شمعة نور</p>
+            <p>شموع وعطور وديكور بتفاصيل هادئة تليق ببيتك.</p>
+          </div>
+          <nav class="footer-nav" aria-label="روابط سريعة">
+            <p class="footer-title">روابط سريعة</p>
+            <ul>
+              <li><a href="index.html#/shop">المتجر</a></li>
+              <li><a href="index.html#/wishlist">المفضلة</a></li>
+              <li><a href="index.html#/cart">السلة</a></li>
+              <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="copyright">
+          &copy; <span id="year">2026</span>
+          <span>شمعة نور. جميع الحقوق محفوظة.</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- أزرار التواصل العائمة (الروابط بيحطها الـ JS من الإعدادات في app.js) -->
+    <aside class="float-contact" id="floatContact" aria-label="تواصل سريع">
+      <button
+        type="button"
+        class="float-close"
+        id="floatClose"
+        aria-label="إخفاء أزرار التواصل"
+      >
+        &times;
+      </button>
+      <a
+        href="#"
+        class="float-link float-telegram"
+        data-channel="telegram"
+        target="_blank"
+        rel="noopener"
+        aria-label="تواصل عبر تيليجرام"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+          />
+        </svg>
+      </a>
+      <a
+        href="#"
+        class="float-link float-whatsapp"
+        data-channel="whatsapp"
+        target="_blank"
+        rel="noopener"
+        aria-label="تواصل عبر واتساب"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+          />
+        </svg>
+      </a>
+    </aside>
+
+    <!-- منطقة رسائل التأكيد (Toast) يملؤها الـ JS -->
+    <div
+      class="toast-region"
+      id="toastRegion"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <!-- ========== قالب: home ========== -->
+    <template id="tpl-home">
+      <section aria-labelledby="hero-title" class="hero">
+        <div class="hero-inner container">
+          <div class="hero-text">
+            <p class="eyebrow">شموع وعطور بتفاصيل هادئة</p>
+            <h1 id="hero-title">دفء يليق ببيتك</h1>
+            <p class="hero-desc">
+              شموع معطرة وعطور وروائح وديكور مختارة بعناية، لتصنع في بيتك أجواء
+              هادئة وفاخرة.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#/shop">تسوق الآن</a>
+              <a class="btn btn-ghost" data-scroll="categories" href="#/"
+                >اكتشف الأقسام</a
+              >
+            </div>
+          </div>
+          <div class="hero-media">
+            <img
+              alt="شمعة معطرة مضاءة على طاولة خشبية"
+              class="hero-img"
+              fetchpriority="high"
+              height="900"
+              src="images/hero1.png"
+              width="800"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Shopping Sections -->
+      <section
+        aria-labelledby="categories-title"
+        class="categories"
+        id="categories"
+      >
+        <div class="container">
+          <div class="section-head">
+            <h2 id="categories-title">تسوق حسب القسم</h2>
+            <p>اختر ما يناسب ذوقك ومساحتك.</p>
+          </div>
+          <ul class="category-grid">
+            <li>
+              <a class="category-card" href="#/shop?category=candles">
+                <img
+                  alt=""
+                  height="600"
+                  loading="lazy"
+                  src="images/img10.png"
+                  width="600"
+                />
+                <span class="category-name">شموع</span>
+              </a>
+            </li>
+            <li>
+              <a class="category-card" href="#/shop?category=perfumes">
+                <img
+                  alt=""
+                  height="600"
+                  loading="lazy"
+                  src="images/img4-.png"
+                  width="600"
+                />
+                <span class="category-name">عطور</span>
+              </a>
+            </li>
+            <li>
+              <a class="category-card" href="#/shop?category=home-fragrance">
+                <img
+                  alt=""
+                  height="600"
+                  loading="lazy"
+                  src="images/img2.png"
+                  width="600"
+                />
+                <span class="category-name">معطرات المنزل</span>
+              </a>
+            </li>
+            <li>
+              <a class="category-card" href="#/shop?category=decor">
+                <img
+                  alt=""
+                  height="600"
+                  loading="lazy"
+                  src="images/img8.png"
+                  width="600"
+                />
+                <span class="category-name">ديكور</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- منتجات مميزة -->
+      <section aria-labelledby="featured-title" class="featured" id="featured">
+        <div class="container">
+          <div class="section-head section-head-row">
+            <h2 id="featured-title">منتجات مميزة</h2>
+            <a class="link-more" href="#/shop">عرض الكل</a>
+          </div>
+          <ul class="product-grid" id="featuredGrid"></ul>
+        </div>
+      </section>
+      <!-- المميزات -->
+      <section aria-labelledby="features-title" class="features">
+        <div class="container">
+          <h2 class="features-heading" id="features-title">لماذا شمعة نوࢪ</h2>
+          <ul class="features-list">
+            <li class="feature-item">
+              <h3 class="feature-title">تغليف للهدايا</h3>
+              <p>تغليف أنيق جاهز للإهداء.</p>
+            </li>
+            <li class="feature-item">
+              <h3 class="feature-title">خامات مختارة</h3>
+              <p>شمع وزيوت عطرية بعناية.</p>
+            </li>
+            <li class="feature-item">
+              <h3 class="feature-title" data-i18n="features.deliveryTitle">
+                توصيل لباب البيت
+              </h3>
+              <p>شحن سريع وتتبع للطلب.</p>
+            </li>
+            <li class="feature-item">
+              <h3 class="feature-title">استبدال سهل</h3>
+              <p>سياسة استبدال واضحة.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- النشرة البريدية -->
+      <section
+        aria-labelledby="newsletter-title"
+        class="newsletter"
+        id="newsletter"
+      >
+        <div class="container newsletter-inner">
+          <div class="newsletter-text">
+            <h2 id="newsletter-title">ابقَ على اطلاع</h2>
+            <p>اشترك ليصلك جديدنا وعروضنا الخاصة.</p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm" novalidate="">
+            <label class="sr-only" for="newsletterEmail"
+              >البريد الإلكتروني</label
+            >
+            <input
+              autocomplete="email"
+              id="newsletterEmail"
+              name="email"
+              placeholder="بريدك الإلكتروني"
+              required=""
+              type="email"
+            />
+            <button class="btn btn-primary" type="submit">اشترك</button>
+            <p
+              aria-live="polite"
+              class="form-msg"
+              id="newsletterMsg"
+              role="status"
+            ></p>
+          </form>
+        </div>
+      </section>
+      <!-- زرار خدمة خمسات -->
+      <section aria-labelledby="cta-title" class="cta" id="service">
+        <div class="container cta-inner">
+          <h2 id="cta-title">تريد متجراً مثل هذا لمشروعك؟</h2>
+          <p>
+            يمكنك طلب تصميم وبرمجة واجهة متجر إلكتروني لمشروعك وأسعار الخدمة على
+            خمسات.
+          </p>
+          <a class="btn btn-primary" href="#" rel="noopener" target="_blank"
+            >اطلب الخدمة على خمسات</a
+          >
+        </div>
+      </section>
+    </template>
+
+    <!-- ========== قالب: shop ========== -->
+    <template id="tpl-shop">
+      <!-- ========== رأس الصفحة ========== -->
+      <section aria-labelledby="shop-title" class="page-hero">
+        <div class="container">
+          <nav aria-label="مسار التنقل">
+            <ol class="breadcrumb">
+              <li><a href="#/">الرئيسية</a></li>
+              <li aria-current="page">المتجر</li>
+            </ol>
+          </nav>
+          <h1 id="shop-title">المتجر</h1>
+          <p>اكتشف الشموع والعطور ومعطرات المنزل والديكور في مكان واحد.</p>
+        </div>
+      </section>
+      <!-- ========== الفلاتر + المنتجات ========== -->
+      <section aria-label="منتجات المتجر" class="shop">
+        <div class="container shop-layout">
+          <!-- الفلاتر -->
+          <aside aria-label="فلاتر المنتجات" class="filters" id="filters">
+            <form id="filtersForm">
+              <div class="field">
+                <label class="field-label" for="searchInput">بحث</label>
+                <input
+                  autocomplete="off"
+                  id="searchInput"
+                  name="search"
+                  placeholder="ابحث عن منتج"
+                  type="search"
+                />
+              </div>
+              <fieldset>
+                <legend>القسم</legend>
+                <div class="radio-list">
+                  <label>
+                    <input checked="" name="category" type="radio" value="" />
+                    الكل
+                  </label>
+                  <label>
+                    <input name="category" type="radio" value="candles" />
+                    شموع
+                  </label>
+                  <label>
+                    <input name="category" type="radio" value="perfumes" />
+                    عطور
+                  </label>
+                  <label>
+                    <input
+                      name="category"
+                      type="radio"
+                      value="home-fragrance"
+                    />
+                    معطرات المنزل
+                  </label>
+                  <label>
+                    <input name="category" type="radio" value="decor" />
+                    ديكور
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>السعر (ج.م)</legend>
+                <div class="price-row">
+                  <div class="field">
+                    <label class="field-label" for="minPrice">من</label>
+                    <input
+                      id="minPrice"
+                      inputmode="numeric"
+                      min="0"
+                      name="minPrice"
+                      placeholder="0"
+                      type="number"
+                    />
+                  </div>
+                  <div class="field">
+                    <label class="field-label" for="maxPrice">إلى</label>
+                    <input
+                      id="maxPrice"
+                      inputmode="numeric"
+                      min="0"
+                      name="maxPrice"
+                      placeholder="1000"
+                      type="number"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+              <button class="btn btn-ghost filters-reset" type="reset">
+                مسح الفلاتر
+              </button>
+            </form>
+          </aside>
+          <!-- المنتجات -->
+          <div class="shop-main">
+            <div class="shop-toolbar">
+              <p
+                aria-live="polite"
+                class="results-count"
+                id="resultsCount"
+                role="status"
+              >
+                عرض 6 منتجات
+              </p>
+              <div class="toolbar-actions">
+                <button
+                  aria-controls="filters"
+                  aria-expanded="false"
+                  class="btn btn-ghost filters-toggle"
+                  id="filtersToggle"
+                  type="button"
+                >
+                  الفلاتر
+                </button>
+                <label class="sort-label" for="sortSelect">الترتيب</label>
+                <select class="sort-select" id="sortSelect">
+                  <option value="newest">الأحدث</option>
+                  <option value="price-asc">السعر: من الأقل للأعلى</option>
+                  <option value="price-desc">السعر: من الأعلى للأقل</option>
+                </select>
+              </div>
+            </div>
+            <ul class="product-grid" id="productGrid"></ul>
+            <p class="empty-state" hidden="" id="emptyState">
+              لا توجد منتجات مطابقة لبحثك.
+            </p>
+          </div>
+        </div>
+      </section>
+    </template>
+
+    <!-- ========== قالب: product ========== -->
+    <template id="tpl-product">
+      <div class="container page-top">
+        <nav aria-label="مسار التنقل">
+          <ol class="breadcrumb">
+            <li><a href="#/">الرئيسية</a></li>
+            <li><a href="#/shop">المتجر</a></li>
+            <li aria-current="page">شمعة الفانيليا والعنبر</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- ========== تفاصيل المنتج  ========== -->
+      <section aria-labelledby="product-title" class="product-detail">
+        <div class="container product-layout">
+          <div class="product-gallery">
+            <img
+              alt="شمعة الفانيليا والعنبر"
+              fetchpriority="high"
+              height="1000"
+              id="productImage"
+              src="images/شمعة الفانيليا والعنبر.png"
+              width="800"
+            />
+          </div>
+          <div class="product-info">
+            <p class="product-cat" id="productCategory">شموع</p>
+            <h1 id="product-title">شمعة الفانيليا والعنبر</h1>
+            <p class="product-price-lg" id="productPrice">
+              180 <span class="currency">ج.م</span>
+            </p>
+            <p class="product-desc" id="productDesc">
+              شمعة معطرة بنفحات الفانيليا والعنبر، تمنح مكانك دفئاً وهدوءاً.
+            </p>
+            <form class="product-form" id="productForm" novalidate="">
+              <div class="form-field">
+                <label for="sizeSelect">الحجم</label>
+                <select class="form-control" id="sizeSelect" name="size">
+                  <option value="small">صغير</option>
+                  <option selected="" value="medium">متوسط</option>
+                  <option value="large">كبير</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <span class="field-label" id="qtyLabel">الكمية</span>
+                <div aria-label="الكمية" class="qty" role="group">
+                  <button
+                    aria-label="إنقاص الكمية"
+                    class="qty-btn"
+                    type="button"
+                  >
+                    −
+                  </button>
+                  <input
+                    aria-label="الكمية"
+                    id="qtyInput"
+                    inputmode="numeric"
+                    max="10"
+                    min="1"
+                    type="number"
+                    value="1"
+                  />
+                  <button
+                    aria-label="زيادة الكمية"
+                    class="qty-btn"
+                    type="button"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="product-buy">
+                <button class="btn btn-primary" id="addToCartBtn" type="submit">
+                  أضف للسلة
+                </button>
+                <button
+                  aria-label="أضف للمفضلة"
+                  aria-pressed="false"
+                  class="wish-btn wish-btn-lg"
+                  id="wishBtn"
+                  type="button"
+                >
+                  ♡
+                </button>
+              </div>
+            </form>
+            <ul class="product-points">
+              <li>تغليف أنيق جاهز للإهداء</li>
+              <li>شحن سريع وتتبع للطلب</li>
+              <li>سياسة استبدال واضحة</li>
+            </ul>
+            <div class="accordion">
+              <details open="">
+                <summary>تفاصيل المنتج</summary>
+                <p>
+                  تصميم هادئ ورائحة دافئة تناسب غرف المعيشة وغرف النوم. احرص على
+                  قص الفتيلة قبل كل استخدام لتحصل على احتراق متوازن.
+                </p>
+              </details>
+              <details>
+                <summary>الشحن والاستبدال</summary>
+                <p>
+                  يتم التوصيل خلال أيام العمل، ويمكن الاستبدال وفق سياسة المتجر.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========== منتجات مشابهة ========== -->
+      <section aria-labelledby="related-title" class="related">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="related-title">قد يعجبك أيضاً</h2>
+          </div>
+          <ul class="product-grid" id="relatedGrid"></ul>
+        </div>
+      </section>
+    </template>
+
+    <!-- ========== قالب: cart ========== -->
+    <template id="tpl-cart">
+      <section aria-labelledby="cart-title" class="page-hero">
+        <div class="container">
+          <nav aria-label="مسار التنقل">
+            <ol class="breadcrumb">
+              <li><a href="#/">الرئيسية</a></li>
+              <li aria-current="page">السلة</li>
+            </ol>
+          </nav>
+          <h1 id="cart-title">السلة</h1>
+        </div>
+      </section>
+      <section aria-label="محتويات السلة" class="cart">
+        <div class="container cart-layout">
+          <div class="cart-main">
+            <ul class="cart-list" id="cartList"></ul>
+            <div class="cart-empty" hidden="" id="cartEmpty">
+              <p>سلتك فارغة حالياً.</p>
+              <a class="btn btn-primary" href="#/shop">تسوق الآن</a>
+            </div>
+          </div>
+          <aside aria-labelledby="summary-title" class="cart-summary panel">
+            <h2 id="summary-title">ملخص الطلب</h2>
+            <form class="coupon-form" id="couponForm" novalidate="">
+              <label class="sr-only" for="couponInput">كود الخصم</label>
+              <input
+                autocomplete="off"
+                class="form-control"
+                id="couponInput"
+                placeholder="كود الخصم"
+                type="text"
+              />
+              <button class="btn btn-ghost" type="submit">تطبيق</button>
+            </form>
+            <p
+              aria-live="polite"
+              class="form-msg"
+              id="couponMsg"
+              role="status"
+            ></p>
+            <dl class="summary-rows">
+              <div>
+                <dt>المجموع الفرعي</dt>
+                <dd id="subtotal">1080 ج.م</dd>
+              </div>
+              <div>
+                <dt>الخصم</dt>
+                <dd id="discount">0 ج.م</dd>
+              </div>
+              <div>
+                <dt>الشحن</dt>
+                <dd id="shipping">50 ج.م</dd>
+              </div>
+              <div class="summary-total">
+                <dt>الإجمالي</dt>
+                <dd id="total">1130 ج.م</dd>
+              </div>
+            </dl>
+            <a class="btn btn-primary" href="#/checkout" id="checkoutBtn"
+              >إتمام الطلب</a
+            >
+          </aside>
+        </div>
+      </section>
+    </template>
+
+    <!-- ========== قالب: checkout ========== -->
+    <template id="tpl-checkout">
+      <section aria-labelledby="checkout-title" class="page-hero">
+        <div class="container">
+          <nav aria-label="مسار التنقل">
+            <ol class="breadcrumb">
+              <li><a href="#/">الرئيسية</a></li>
+              <li><a href="#/cart">السلة</a></li>
+              <li aria-current="page">إتمام الطلب</li>
+            </ol>
+          </nav>
+          <h1 id="checkout-title">إتمام الطلب</h1>
+        </div>
+      </section>
+      <section aria-label="بيانات الطلب" class="checkout">
+        <div class="container checkout-layout">
+          <form class="checkout-form" id="checkoutForm" novalidate="">
+            <fieldset>
+              <legend>بيانات التواصل</legend>
+              <div class="form-grid">
+                <div class="form-field full">
+                  <label for="fullName">الاسم الكامل</label>
+                  <input
+                    aria-describedby="fullNameError"
+                    autocomplete="name"
+                    class="form-control"
+                    id="fullName"
+                    name="fullName"
+                    required=""
+                    type="text"
+                  />
+                  <p class="field-error" id="fullNameError"></p>
+                </div>
+                <div class="form-field">
+                  <label for="phone">رقم الموبايل</label>
+                  <input
+                    aria-describedby="phoneError"
+                    autocomplete="tel"
+                    class="form-control"
+                    id="phone"
+                    inputmode="tel"
+                    name="phone"
+                    required=""
+                    type="tel"
+                  />
+                  <p class="field-error" id="phoneError"></p>
+                </div>
+                <div class="form-field">
+                  <label for="email">البريد الإلكتروني</label>
+                  <input
+                    aria-describedby="emailError"
+                    autocomplete="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required=""
+                    type="email"
+                  />
+                  <p class="field-error" id="emailError"></p>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>عنوان التوصيل</legend>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="governorate">المحافظة</label>
+                  <select
+                    aria-describedby="governorateError"
+                    class="form-control"
+                    id="governorate"
+                    name="governorate"
+                    required=""
+                  >
+                    <option value="">اختر المحافظة</option>
+                    <option value="cairo">القاهرة</option>
+                    <option value="giza">الجيزة</option>
+                    <option value="alex">الإسكندرية</option>
+                    <option value="other">محافظة أخرى</option>
+                  </select>
+                  <p class="field-error" id="governorateError"></p>
+                </div>
+                <div class="form-field">
+                  <label for="city">المدينة / المنطقة</label>
+                  <input
+                    aria-describedby="cityError"
+                    autocomplete="address-level2"
+                    class="form-control"
+                    id="city"
+                    name="city"
+                    required=""
+                    type="text"
+                  />
+                  <p class="field-error" id="cityError"></p>
+                </div>
+                <div class="form-field full">
+                  <label for="address">العنوان بالتفصيل</label>
+                  <textarea
+                    aria-describedby="addressError"
+                    autocomplete="street-address"
+                    class="form-control"
+                    id="address"
+                    name="address"
+                    required=""
+                    rows="3"
+                  ></textarea>
+                  <p class="field-error" id="addressError"></p>
+                </div>
+                <div class="form-field full">
+                  <label for="notes">ملاحظات (اختياري)</label>
+                  <textarea
+                    class="form-control"
+                    id="notes"
+                    name="notes"
+                    rows="2"
+                  ></textarea>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>طريقة الدفع</legend>
+              <label class="pay-option">
+                <input checked="" name="payment" type="radio" value="cod" />
+                الدفع عند الاستلام
+              </label>
+              <label class="pay-option is-disabled">
+                <input disabled="" name="payment" type="radio" value="card" />
+                بطاقة بنكية (قريباً)
+              </label>
+            </fieldset>
+            <button class="btn btn-primary checkout-submit" type="submit">
+              تأكيد الطلب
+            </button>
+          </form>
+          <aside aria-labelledby="order-title" class="order-summary panel">
+            <h2 id="order-title">ملخص طلبك</h2>
+            <ul class="order-items" id="orderItems"></ul>
+            <dl class="summary-rows">
+              <div>
+                <dt>المجموع الفرعي</dt>
+                <dd id="subtotal">1080 ج.م</dd>
+              </div>
+              <div>
+                <dt>الشحن</dt>
+                <dd id="shipping">50 ج.م</dd>
+              </div>
+              <div class="summary-total">
+                <dt>الإجمالي</dt>
+                <dd id="total">1130 ج.م</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+        <!-- رسالة النجاح: مخفية لحد ما الطلب يتأكد -->
+        <div
+          class="container order-success"
+          hidden=""
+          id="orderSuccess"
+          role="status"
+        >
+          <div aria-hidden="true" class="success-mark">✓</div>
+          <h2>تم استلام طلبك</h2>
+          <p>رقم الطلب: <strong id="orderNumber">—</strong></p>
+          <a class="btn btn-primary" href="#/shop">متابعة التسوق</a>
+        </div>
+      </section>
+    </template>
+
+    <!-- ========== قالب: wishlist ========== -->
+    <template id="tpl-wishlist">
+      <section aria-labelledby="wish-title" class="page-hero">
+        <div class="container">
+          <nav aria-label="مسار التنقل">
+            <ol class="breadcrumb">
+              <li><a href="#/">الرئيسية</a></li>
+              <li aria-current="page">المفضلة</li>
+            </ol>
+          </nav>
+          <h1 id="wish-title">المفضلة</h1>
+        </div>
+      </section>
+      <section aria-label="المنتجات المفضلة" class="wishlist">
+        <div class="container">
+          <div class="list-toolbar">
+            <p
+              aria-live="polite"
+              class="results-count"
+              id="wishResults"
+              role="status"
+            >
+              عدد المنتجات: 2
+            </p>
+            <button class="btn btn-ghost btn-sm" id="clearWish" type="button">
+              مسح الكل
+            </button>
+          </div>
+          <ul class="product-grid" id="wishGrid"></ul>
+          <div class="empty-state" hidden="" id="wishEmpty">
+            <p>لم تضف أي منتج إلى المفضلة بعد.</p>
+            <a class="btn btn-primary" href="#/shop">اكتشف المنتجات</a>
+          </div>
+        </div>
+      </section>
+    </template>
+  </body>
+</html>

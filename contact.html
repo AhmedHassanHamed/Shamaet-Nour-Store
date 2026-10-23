@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تواصل معنا | شمعة نوࢪ</title>
+    <meta
+      name="description"
+      content="تواصل معنا لأي استفسار، أو راسلنا مباشرة عبر البريد وواتساب وتيليجرام ومنصات العمل الحر."
+    />
+    <meta name="theme-color" content="#f6efe6" />
+
+    <!-- الأيقونات -->
+    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="apple-touch-icon" href="images/icon.png" />
+
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&family=Tajawal:wght@400;500;700&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ملف CSS واحد + ملفين JS: الأول للغة، والتاني لمنطق المشروع -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/i18n.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+    <!-- ========== الهيدر ========== -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#/" class="brand">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span class="brand-name">شمعة نوࢪ</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html#/" class="nav-link" data-nav="home"
+                >الرئيسية</a
+              >
+            </li>
+            <li>
+              <a href="index.html#/shop" class="nav-link" data-nav="shop"
+                >المتجر</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="nav-link"
+                data-nav="contact"
+                aria-current="page"
+                >تواصل معنا</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="icon-btn"
+            id="langToggle"
+            aria-label="تغيير اللغة"
+          >
+            <span>EN</span>
+          </button>
+          <button
+            type="button"
+            class="icon-btn"
+            id="themeToggle"
+            aria-label="تبديل الوضع الليلي"
+          >
+            <span>ثيم</span>
+          </button>
+          <a href="index.html#/wishlist" class="icon-btn" aria-label="المفضلة">
+            <span class="icon-label">المفضلة</span>
+            <span class="badge" id="wishCount">0</span>
+          </a>
+          <a href="index.html#/cart" class="icon-btn" aria-label="السلة">
+            <span class="icon-label">السلة</span>
+            <span class="badge" id="cartCount">0</span>
+          </a>
+          <button
+            type="button"
+            class="icon-btn menu-btn"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="mainNav"
+            aria-label="فتح القائمة"
+          >
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="page-hero" aria-labelledby="contact-title">
+        <div class="container">
+          <nav aria-label="مسار التنقل">
+            <ol class="breadcrumb">
+              <li><a href="index.html#/">الرئيسية</a></li>
+              <li aria-current="page">تواصل معنا</li>
+            </ol>
+          </nav>
+          <h1 id="contact-title">تواصل معنا</h1>
+          <p>
+            اترك رسالتك في النموذج، أو تواصل معنا مباشرة عبر أي قناة من القنوات
+            التالية.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact" aria-label="نموذج وقنوات التواصل">
+        <div class="container contact-layout">
+          <form class="contact-form panel" id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="contactName">الاسم</label>
+                <input
+                  type="text"
+                  id="contactName"
+                  name="contactName"
+                  class="form-control"
+                  autocomplete="name"
+                  aria-describedby="contactNameError"
+                  required
+                />
+                <p class="field-error" id="contactNameError"></p>
+              </div>
+              <div class="form-field">
+                <label for="contactEmail">البريد الإلكتروني</label>
+                <input
+                  type="email"
+                  id="contactEmail"
+                  name="contactEmail"
+                  class="form-control"
+                  autocomplete="email"
+                  aria-describedby="contactEmailError"
+                  required
+                />
+                <p class="field-error" id="contactEmailError"></p>
+              </div>
+              <div class="form-field full">
+                <label for="topic">موضوع الرسالة</label>
+                <select id="topic" name="topic" class="form-control">
+                  <option value="product">استفسار عن منتج</option>
+                  <option value="order">متابعة طلب</option>
+                  <option value="other">أخرى</option>
+                </select>
+              </div>
+              <div class="form-field full">
+                <label for="message">الرسالة</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  rows="5"
+                  aria-describedby="messageError"
+                  required
+                ></textarea>
+                <p class="field-error" id="messageError"></p>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+            <p
+              class="form-msg"
+              id="contactMsg"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+
+          <aside class="contact-info panel" aria-labelledby="info-title">
+            <h2 id="info-title">قنوات التواصل</h2>
+            <p class="contact-note">تواصل مباشرة مع مطوّر الموقع أحمد حسن.</p>
+            <ul class="channel-grid">
+              <li class="channel" data-channel="email">
+                <a href="#" class="channel-card">
+                  <span class="channel-name">البريد الإلكتروني</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="whatsapp">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">واتساب</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="telegram">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">تيليجرام</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="portfolio">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">البورتفوليو</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="khamsat">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">خمسات</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="mostaql">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">مستقل</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="upwork">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">Upwork</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="freelancer">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">Freelancer.com</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="fiverr">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">Fiverr</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+              <li class="channel" data-channel="linkedin">
+                <a href="#" class="channel-card" target="_blank" rel="noopener">
+                  <span class="channel-name">LinkedIn</span>
+                  <span class="channel-handle" data-handle></span>
+                </a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== الفوتر ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <p class="footer-logo">شمعة نور</p>
+            <p>شموع وعطور وديكور بتفاصيل هادئة تليق ببيتك.</p>
+          </div>
+          <nav class="footer-nav" aria-label="روابط سريعة">
+            <p class="footer-title">روابط سريعة</p>
+            <ul>
+              <li><a href="index.html#/shop">المتجر</a></li>
+              <li><a href="index.html#/wishlist">المفضلة</a></li>
+              <li><a href="index.html#/cart">السلة</a></li>
+              <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="copyright">
+          &copy; <span id="year">2026</span>
+          <span>شمعة نور. جميع الحقوق محفوظة.</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- أزرار التواصل العائمة (الروابط بيحطها الـ JS من الإعدادات في app.js) -->
+    <aside class="float-contact" id="floatContact" aria-label="تواصل سريع">
+      <button
+        type="button"
+        class="float-close"
+        id="floatClose"
+        aria-label="إخفاء أزرار التواصل"
+      >
+        &times;
+      </button>
+      <a
+        href="#"
+        class="float-link float-telegram"
+        data-channel="telegram"
+        target="_blank"
+        rel="noopener"
+        aria-label="تواصل عبر تيليجرام"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+          />
+        </svg>
+      </a>
+      <a
+        href="#"
+        class="float-link float-whatsapp"
+        data-channel="whatsapp"
+        target="_blank"
+        rel="noopener"
+        aria-label="تواصل عبر واتساب"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+          />
+        </svg>
+      </a>
+    </aside>
+
+    <!-- منطقة رسائل التأكيد (Toast) يملؤها الـ JS -->
+    <div
+      class="toast-region"
+      id="toastRegion"
+      role="status"
+      aria-live="polite"
+    ></div>
+  </body>
+</html>
