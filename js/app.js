@@ -8,12 +8,12 @@
 (() => {
   "use strict";
 
-  /* ===== حساباتك وروابط التواصل (عدّل هنا بس) ===== */
+  /* ===== حساباتك وروابط التواصل ===== */
   const LINKS = {
     whatsapp: "https://wa.me/201147729020",
-    telegram: "https://t.me/+201147729020", // لو عندك يوزر: https://t.me/اليوزر
+    telegram: "https://t.me/+201147729020", 
     email: "mailto:hassanhamedeldomoky@gmail.com",
-    portfolio: "", // ضيف رابط البورتفوليو هنا لو عندك (فاضي = بيتخبى)
+    portfolio: "https://ahmedhassanhamed.github.io/AhmedHassanHamed/",
     khamsat: "https://khamsat.com/user/hassanhamed_cz",
     mostaql: "https://mostaql.com/u/Ahmed_Hassan_CZ",
     upwork: "https://www.upwork.com/freelancers/~017e71c52f4947b2a6",
@@ -60,8 +60,8 @@
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   let lang = load("nour_lang", "ar");
-  let cart = load("nour_cart", []); // [{id,size,qty}]
-  let wish = load("nour_wish", []); // [id]
+  let cart = load("nour_cart", []); 
+  let wish = load("nour_wish", []);
   let coupon = load("nour_coupon", "");
   let page = "";
   let refresh = () => {};
